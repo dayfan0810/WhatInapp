@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="updateurl">http://192.168.34.3:8081/WhatinappServer/updateinfo.xml</string>
+
+</resources>
