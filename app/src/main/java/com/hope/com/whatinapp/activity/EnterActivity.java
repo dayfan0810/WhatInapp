@@ -15,7 +15,6 @@ import com.hope.com.whatinapp.domain.UpdateInfo;
 import com.hope.com.whatinapp.utils.ActivityUtils;
 import com.hope.com.whatinapp.utils.NetUtils;
 import com.hope.com.whatinapp.utils.UpdateManager;
-import com.lidroid.xutils.ViewUtils;
 
 /**
  * Created by DAY on 7/17 0017.
@@ -26,6 +25,7 @@ public class EnterActivity extends AppCompatActivity {
 
     private static final int NET_CONNECTED_SUCCESS = 1;
     private static final int NET_CONNECTED_FAILED = 0;
+
     private String versionText;
     protected Handler mHandler = new Handler() {
         @Override
@@ -55,7 +55,6 @@ public class EnterActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 //下载APK
-
 
             }
         });
@@ -89,7 +88,6 @@ public class EnterActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
-        ViewUtils.inject(this);
 //        getVersionName();//versionCode可以理解为内部版本号
         enterJudgedByNet();
     }
