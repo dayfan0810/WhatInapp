@@ -1,14 +1,17 @@
 package com.hope.com.whatinapp.activity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.os.PersistableBundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 import com.hope.com.whatinapp.R;
 import com.hope.com.whatinapp.domain.UpdateInfo;
@@ -31,17 +34,19 @@ public class EnterActivity extends AppCompatActivity {
         @Override
         public void handleMessage(Message msg) {
             switch (msg.what) {
-                case NET_CONNECTED_FAILED:
+                case 1:
                     // TODO: 2016/8/11 接受 没有 网络的msg，直接跳转到主界面
-                    ActivityUtils.toNextActivity(EnterActivity.this, MainActivity.class);
+                    Intent intent = new Intent(EnterActivity.this, MainActivity.class);
+                    startActivity(intent);
+
+//                    ActivityUtils.toNextActivity(EnterActivity.this, MainActivity.class);
                     overridePendingTransition(R.anim.push_right_in, R.anim.push_right_out);
                     break;
-                case NET_CONNECTED_SUCCESS:
+                case 0:
                     // TODO: 2016/8/11 接受 有 网络的msg 去检查更新包 ,如果需要更新就弹出对话框,否则直接进入MainActivity
                     if (idNeedUpdate(versionText)) {
                         showUpdateDialog();
                     }
-                    break;
             }
         }
 
@@ -55,7 +60,12 @@ public class EnterActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 //下载APK
+                if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+                    //如果SD卡挂载才能写文件
 
+                } else {
+                    Toast.makeText(getApplicationContext(), "sd卡不可用", Toast.LENGTH_LONG).show();
+                }
             }
         });
 
