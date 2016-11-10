@@ -1,16 +1,12 @@
 package com.hope.com.whatinapp.activity;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Toast;
 
 import com.hope.com.whatinapp.R;
 import com.hope.com.whatinapp.domain.UpdateInfo;
@@ -38,8 +34,8 @@ public class EnterActivity extends AppCompatActivity {
                     Intent intent = new Intent(EnterActivity.this, MainActivity.class);
                     startActivity(intent);
 
-//                    ActivityUtils.toNextActivity(EnterActivity.this, MainActivity.class);
                     overridePendingTransition(R.anim.push_right_in, R.anim.push_right_out);
+                    finish();
                     break;
                 case 1:
                     // TODO: 2016/8/11 接受 有 网络的msg 去检查更新包 ,如果需要更新就弹出对话框,否则直接进入MainActivity

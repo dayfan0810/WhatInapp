@@ -1,11 +1,25 @@
 <resources>
 
+    <style name="BaseTransparentAppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/themeColor</item>
+        <item name="colorPrimaryDark">@color/themeColor</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <style name="TransparentTheme" parent="@style/BaseTransparentAppTheme">
+        <item name="android:windowIsTranslucent">true</item>
     </style>
 
 

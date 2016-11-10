@@ -30,11 +30,16 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setContentView(R.layout.activity_main);
         super.onCreate(savedInstanceState);
         x.view().inject(this);
-        setContentView(R.layout.activity_main);
-        setSupportActionBar(toolbar);
     }
 
+    public MainActivity() {
+        this(R.color.themeColor);
+    }
 
+    private MainActivity(int color) {
+        super(color);
+    }
 }
