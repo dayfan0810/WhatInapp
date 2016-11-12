@@ -7,4 +7,6 @@
     <color name="white">#ffffff</color>
     <color name="toolbarSubTextColor">#ffd4d4d4</color>
     <color name="toolbarTextColor">#ffffffff</color>
+    <color name="material_theme">#ff009688</color>
+    <color name="dark_theme">##222D32</color>
 </resources>

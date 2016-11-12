@@ -8,6 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="DarkMode" parent="AppTheme.Base">
+        <item name="colorPrimary">@color/dark_theme</item>
+        <item name="dark_text_color">@color/grey_top_light_text</item>
+        <item name="colorPrimaryDark">@color/dark_theme</item>
+    </style>
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -29,6 +34,19 @@
         <item name="android:windowBackground">@drawable/login_splash</item>
     </style>
 
+    <style name="AppThemeMaterial" parent="AppTheme.Base">
+        <item name="colorPrimary">@color/material_theme</item>
+        <item name="colorPrimaryDark">@color/material_theme</item>
+    </style>
+    <style name="AppTheme.Base" parent="Theme.AppCompat">
+        <!--Status bar color-->
+        <item name="dark_text_color">@color/white</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <!--<item name="android:windowAnimationStyle">@style/Animation</item>-->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
 
     <style name="ImageTranslucentTheme" parent="AppTheme">
         <item name="android:windowNoTitle">true</item>
